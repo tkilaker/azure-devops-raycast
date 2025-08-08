@@ -245,7 +245,7 @@ async function downloadImage(imageUrl: string, workItemId: number, preferences: 
     }
     
     // Save image
-    await fs.writeFile(finalPath, Buffer.from(buffer));
+    await fs.writeFile(finalPath, new Uint8Array(buffer));
     
     return finalPath;
   } catch (error) {
