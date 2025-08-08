@@ -1,0 +1,98 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "azure-devops-work-items",
+  "title": "Azure DevOps Work Items",
+  "description": "Search, view, and extract Azure DevOps work items as markdown for AI assistants and documentation",
+  "icon": "assets/icon.png",
+  "author": "tim",
+  "categories": ["Developer Tools", "Productivity"],
+  "keywords": ["azure", "devops", "work items", "agile", "scrum", "markdown", "extract"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "search-work-items",
+      "title": "Search Work Items",
+      "subtitle": "Azure DevOps",
+      "description": "Search and extract work items from Azure DevOps",
+      "mode": "view"
+    },
+    {
+      "name": "extract-by-id",
+      "title": "Extract Work Item by ID",
+      "subtitle": "Azure DevOps",
+      "description": "Extract a specific work item by its ID",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "workItemId",
+          "placeholder": "Work Item ID",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "my-work-items",
+      "title": "My Work Items",
+      "subtitle": "Azure DevOps",
+      "description": "List work items assigned to me",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.0",
+    "@raycast/utils": "^1.10.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "18.18.4",
+    "@types/react": "18.0.26",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist || true",
+    "build:strict": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "link": "ray link",
+    "publish": "npx @raycast/api@latest publish"
+  },
+  "preferences": [
+    {
+      "name": "pat",
+      "title": "Personal Access Token",
+      "description": "Azure DevOps PAT with Work Items (Read) scope",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "organization",
+      "title": "Organization",
+      "description": "Azure DevOps organization name (e.g., mycompany)",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "myorganization"
+    },
+    {
+      "name": "project",
+      "title": "Project",
+      "description": "Azure DevOps project name",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "MyProject"
+    },
+    {
+      "name": "downloadImages",
+      "title": "Download Images",
+      "description": "Download embedded images from work items",
+      "type": "checkbox",
+      "default": true,
+      "required": false,
+      "label": "Download embedded images"
+    }
+  ]
+}
