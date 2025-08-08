@@ -4,7 +4,7 @@
   "title": "Azure DevOps Work Items",
   "description": "Search, view, and extract Azure DevOps work items as markdown for AI assistants and documentation",
   "icon": "assets/icon.png",
-  "author": "tim",
+  "author": "tkilaker",
   "categories": ["Developer Tools", "Productivity"],
   "keywords": ["azure", "devops", "work items", "agile", "scrum", "markdown", "extract"],
   "license": "MIT",
